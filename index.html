@@ -100,7 +100,7 @@ video {
 <hr>
 <div id="abstract">
 <p>
-<b>Abstract</b>&nbsp; Reinforcement Learning (RL) algorithms often rely on specific hyperparameters to guarantee their performances, especially in highly complex environments. This paper proposes an unsupervised and adaptive Decision-Making framework called SIDM for RL, which uses action and state abstractions to address this issue. SIDM improves policy quality, stability, and sample efficiency by up to 18.75%, 88.26%, and 64.86%, respectively.
+<b>Abstract</b>&nbsp; Although Reinforcement Learning (RL) algorithms acquire sequential behavioral patterns through interactions with the environment, their effectiveness in noisy and high-dimensional scenarios typically relies on specific structural priors. This paper proposes an unsupervised and adaptive Decision-Making framework called SIDM for RL, which uses action and state abstractions to address this issue. SIDM improves policy quality, stability, and sample efficiency by up to 32.70%, 88.26%, and 64.86%, respectively.
 </p>
 </div>
 
@@ -108,7 +108,7 @@ video {
 <div id="approach">
   <img src="./docs/framework.png" alt="Framework" style="display: block; max-width: 100%; margin: auto;">
 <p>
-<b>Approach</b>&nbsp; The SIDM framework includes structuralization, sparsification, optimization, and hierarchical abstraction modules. We construct homogeneous state and action graphs, minimize structural entropy to generate optimal encoding trees, and design an aggregation function for hierarchical state or action abstraction. Based on the hierarchical abstractions, we calculate tree node representations to achieve state abstraction in DRL, role discovery in MARL, and skill learning in HRL.
+<b>Approach</b>&nbsp; The SIDM processes environmental observations and rewards, retains historical trajectories, and outputs state, abstract action, role set, and skill set to specific downstream algorithms. Initially, we employ encoder-decoder architectures to embed environmental observations and actions, measure feature similarities and eliminate trivial edges to construct state and action graphs. Subsequently, we initialize an encoding tree for each graph, minimize their structural entropy to obtain community partitioning for states and actions, and design an aggregation using assigned entropy as weights to achieve hierarchical abstractions. Finally, we extract abstract elements to construct a transition graph, define and optimize the structural entropy for this directed graph, calculate common path entropy to quantify each transition's sample probability, and introduce an adaptive skill-based learning mechanism.
 </p>
 </div>
 
